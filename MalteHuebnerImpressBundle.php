@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace MalteHuebner\Impressbundle;
+namespace MalteHuebner\ImpressBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
