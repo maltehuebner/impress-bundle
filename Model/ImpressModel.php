@@ -45,7 +45,7 @@ class ImpressModel
     public function setLastName(string $lastName): ImpressModel
     {
         $this->lastName = $lastName;
-        
+
         return $this;
     }
 

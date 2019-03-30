@@ -2,10 +2,11 @@
 
 namespace MalteHuebner\ImpressBundle\DependencyInjection;
 
+use MalteHuebner\ImpressBundle\ImpressFactory\ConfigurationImpressFactory;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader;
-use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+use Symfony\Component\DependencyInjection\Extension\Extension;
 
 class MalteHuebnerImpressExtension extends Extension
 {
@@ -16,5 +17,10 @@ class MalteHuebnerImpressExtension extends Extension
 
         $xmlLoader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $xmlLoader->load('services.xml');
+
+        if (!empty($config['defaults'])) {
+            $container->getDefinition(ConfigurationImpressFactory::class)
+                ->addMethodCall('setDefaultValues', [$config['defaults']]);
+        }
     }
 }

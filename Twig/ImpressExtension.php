@@ -2,12 +2,21 @@
 
 namespace MalteHuebner\ImpressBundle\Twig;
 
+use MalteHuebner\ImpressBundle\ImpressManager\ImpressManagerInterface;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
 
 class ImpressExtension extends AbstractExtension
 {
+    /** @var ImpressManagerInterface $impressManager */
+    protected $impressManager;
+
+    public function __construct(ImpressManagerInterface $impressManager)
+    {
+        $this->impressManager = $impressManager;
+    }
+
     public function getFunctions(): array
     {
         return [
@@ -15,8 +24,10 @@ class ImpressExtension extends AbstractExtension
         ];
     }
 
-    public function impress(string $key): ?string
+    public function impress(string $propertyName): ?string
     {
-        return 'foobar';
+        $getMethodName = sprintf('get%s', ucfirst($propertyName));
+
+        return $this->impressManager->getImpress()->$getMethodName();
     }
 }
