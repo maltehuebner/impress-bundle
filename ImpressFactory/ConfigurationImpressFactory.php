@@ -13,6 +13,8 @@ class ConfigurationImpressFactory extends AbstractImpressFactory
             ->setHouseNumber((string) $defaultValues['house_number'])
             ->setZipCode((string) $defaultValues['zip_code'])
             ->setCity((string) $defaultValues['city'])
-            ->setCountry((string) $defaultValues['country']);
+            ->setCountry((string) $defaultValues['country'])
+            ->setPhoneNumber((string) $defaultValues['phone_number'])
+            ->setEmailAddress((string) $defaultValues['email_address']);
     }
 }

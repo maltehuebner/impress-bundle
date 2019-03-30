@@ -26,6 +26,8 @@ class Configuration implements ConfigurationInterface
             ->scalarNode('zip_code')->end()
             ->scalarNode('city')->end()
             ->scalarNode('country')->end()
+            ->scalarNode('phone_number')->end()
+            ->scalarNode('email_address')->end()
             ->end()
             ->end()
             ->end();

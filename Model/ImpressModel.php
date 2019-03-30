@@ -25,6 +25,12 @@ class ImpressModel
     /** @var string $country */
     protected $country;
 
+    /** @var string $phoneNumber */
+    protected $phoneNumber;
+
+    /** @var string $emailAddress */
+    protected $emailAddress;
+
     public function getFirstName(): ?string
     {
         return $this->firstName;
@@ -105,6 +111,30 @@ class ImpressModel
     public function setCountry(string $country): ImpressModel
     {
         $this->country = $country;
+
+        return $this;
+    }
+
+    public function getPhoneNumber(): ?string
+    {
+        return $this->phoneNumber;
+    }
+
+    public function setPhoneNumber(string $phoneNumber): ImpressModel
+    {
+        $this->phoneNumber = $phoneNumber;
+
+        return $this;
+    }
+
+    public function getEmailAddress(): ?string
+    {
+        return $this->emailAddress;
+    }
+
+    public function setEmailAddress(string $emailAddress): ImpressModel
+    {
+        $this->emailAddress = $emailAddress;
 
         return $this;
     }
