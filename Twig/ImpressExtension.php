@@ -20,11 +20,11 @@ class ImpressExtension extends AbstractExtension
     public function getFunctions(): array
     {
         return [
-            new TwigFunction('impress', [$this, 'impress']),
+            new TwigFunction('impress_property', [$this, 'impressProperty']),
         ];
     }
 
-    public function impress(string $propertyName): ?string
+    public function impressProperty(string $propertyName): ?string
     {
         $getMethodName = sprintf('get%s', ucfirst($propertyName));
 
