@@ -10,7 +10,7 @@ class ImpressManager implements ImpressManagerInterface
     /** @var ImpressFactoryInterface $factory */
     protected $factory;
 
-    public function __construct(ImpressFactoryInterface $factory)
+    public function setFactory(ImpressFactoryInterface $factory): void
     {
         $this->factory = $factory;
     }
