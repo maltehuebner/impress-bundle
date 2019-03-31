@@ -46,5 +46,11 @@ class MalteHuebnerImpressExtension extends Extension
                 ->getDefinition(RemoteJsonFactory::class)
                 ->addMethodCall('setRemoteUrl', [$config['remote']['url']]);
         }
+
+        $container->loadFromExtension('twig', [
+            'paths' => [
+                '%kernel.project_dir%/vendor/maltehuebner/impress-bundle/Ressources/views' => 'MalteHuebnerImpress',
+            ],
+        ]);
     }
 }

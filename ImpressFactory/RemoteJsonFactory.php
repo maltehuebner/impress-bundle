@@ -5,8 +5,9 @@ namespace MalteHuebner\ImpressBundle\ImpressFactory;
 use GuzzleHttp\Client;
 use JMS\Serializer\SerializerInterface;
 use MalteHuebner\ImpressBundle\Model\ImpressModel;
+use Symfony\Component\Cache\Adapter\AdapterInterface;
 
-class RemoteJsonFactory extends AbstractImpressFactory
+class RemoteJsonFactory extends AbstractCachingImpressFactory
 {
     /** @var string $remoteUrl */
     protected $remoteUrl;
@@ -17,11 +18,11 @@ class RemoteJsonFactory extends AbstractImpressFactory
     /** @var bool $loaded */
     protected $loaded = false;
 
-    public function __construct(SerializerInterface $serializer)
+    public function __construct(SerializerInterface $serializer, AdapterInterface $adapter)
     {
         $this->serializer = $serializer;
 
-        parent::__construct();
+        parent::__construct($adapter);
     }
 
     public function setRemoteUrl(string $remoteUrl): void
@@ -29,15 +30,11 @@ class RemoteJsonFactory extends AbstractImpressFactory
         $this->remoteUrl = $remoteUrl;
     }
 
-    public function getImpress(): ImpressModel
+    protected function generateImpress(): ImpressModel
     {
-        if (!$this->loaded) {
-            $this->impressModel = $this->serializer->deserialize($this->getJsonData(), ImpressModel::class, 'json');
+        $this->impressModel = $this->serializer->deserialize($this->getJsonData(), ImpressModel::class, 'json');
 
-            $this->loaded = true;
-        }
-
-        return parent::getImpress();
+        return $this->impressModel;
     }
 
     protected function getJsonData(): string
