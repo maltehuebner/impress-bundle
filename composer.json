@@ -3,9 +3,10 @@
     "description": "Keep your impress up to date",
     "type": "library",
     "require": {
-        "php": "^7.1",
+        "php": "^7.3",
         "jms/serializer-bundle": "^3.2",
-        "guzzlehttp/guzzle": "^6.3"
+        "guzzlehttp/guzzle": "^6.3",
+        "symfony/cache": "^4.2"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.5"
