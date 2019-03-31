@@ -47,10 +47,10 @@ class MalteHuebnerImpressExtension extends Extension
                 ->addMethodCall('setRemoteUrl', [$config['remote']['url']]);
         }
 
-        $container->loadFromExtension('twig', [
+        /*$container->loadFromExtension('twig', [
             'paths' => [
                 '%kernel.project_dir%/vendor/maltehuebner/impress-bundle/Ressources/views' => 'MalteHuebnerImpress',
             ],
-        ]);
+        ]);*/
     }
 }
