@@ -2,33 +2,74 @@
 
 namespace MalteHuebner\ImpressBundle\Model;
 
+use JMS\Serializer\Annotation as JMS;
+
+/**
+ * @JMS\ExclusionPolicy("all")
+ */
 class ImpressModel
 {
-    /** @var string $firstName */
+    /**
+     * @var string $firstName
+     * @JMS\Expose
+     * @JMS\Type("string")
+     */
     protected $firstName;
 
-    /** @var string $lastName */
+    /**
+     * @var string $lastName
+     * @JMS\Expose
+     * @JMS\Type("string")
+     */
     protected $lastName;
 
-    /** @var string $street */
+    /**
+     * @var string $street
+     * @JMS\Expose
+     * @JMS\Type("string")
+     */
     protected $street;
 
-    /** @var string $houseNumber */
+    /**
+     * @var string $houseNumber
+     * @JMS\Expose
+     * @JMS\Type("string")
+     */
     protected $houseNumber;
 
-    /** @var string $zipCode */
+    /**
+     * @var string $zipCode
+     * @JMS\Expose
+     * @JMS\Type("string")
+     */
     protected $zipCode;
 
-    /** @var string $city */
+    /**
+     * @var string $city
+     * @JMS\Expose
+     * @JMS\Type("string")
+     */
     protected $city;
 
-    /** @var string $country */
+    /**
+     * @var string $country
+     * @JMS\Expose
+     * @JMS\Type("string")
+     */
     protected $country;
 
-    /** @var string $phoneNumber */
+    /**
+     * @var string $phoneNumber
+     * @JMS\Expose
+     * @JMS\Type("string")
+     */
     protected $phoneNumber;
 
-    /** @var string $emailAddress */
+    /**
+     * @var string $emailAddress
+     * @JMS\Expose
+     * @JMS\Type("string")
+     */
     protected $emailAddress;
 
     public function getFirstName(): ?string

@@ -43,7 +43,7 @@ class MalteHuebnerImpressExtension extends Extension
 
         if (!empty($config['remote'])) {
             $container
-                ->getDefinition(ConfigurationImpressFactory::class)
+                ->getDefinition(RemoteJsonFactory::class)
                 ->addMethodCall('setRemoteUrl', [$config['remote']['url']]);
         }
     }
