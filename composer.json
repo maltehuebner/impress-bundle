@@ -4,7 +4,7 @@
     "type": "library",
     "require": {
         "php": "^7.3",
-        "jms/serializer-bundle": "^3.2",
+        "jms/serializer": "^2.2",
         "guzzlehttp/guzzle": "^6.3",
         "symfony/cache": "^4.2"
     },
