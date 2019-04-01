@@ -3,10 +3,9 @@
 namespace MalteHuebner\ImpressBundle\ImpressFactory;
 
 use GuzzleHttp\Client;
-use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerInterface;
+use JMS\Serializer\SerializerBuilder;
 use MalteHuebner\ImpressBundle\Model\ImpressModel;
-use Symfony\Component\Cache\Adapter\AdapterInterface;
 
 class RemoteJsonFactory extends AbstractCachingImpressFactory
 {
@@ -39,6 +38,6 @@ class RemoteJsonFactory extends AbstractCachingImpressFactory
 
     protected function getSerializer(): SerializerInterface
     {
-        return JMS\Serializer\SerializerBuilder::create()->build();
+        return SerializerBuilder::create()->build();
     }
 }
