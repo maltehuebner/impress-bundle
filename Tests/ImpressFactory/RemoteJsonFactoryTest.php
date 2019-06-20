@@ -22,12 +22,12 @@ class RemoteJsonFactoryTest extends TestCase
         return '{
     "first_name": "Malte",
     "last_name": "Hübner",
-    "street": "Niebuhrstraße",
-    "house_number": "48",
+    "street": "Mühlenaustieg",
+    "house_number": "10",
     "zip_code": "24118",
-    "city": "Kiel",
+    "city": "Hamburg",
     "country": "Deutschland",
-    "phone_number": "0049 151 172 77 032",
+    "phone_number": "0049 700 864 833",
     "email_address": "maltehuebner@gmx.org"
 }';
     }
@@ -56,12 +56,12 @@ class RemoteJsonFactoryTest extends TestCase
         $expectedImpress
             ->setFirstName('Malte')
             ->setLastName('Hübner')
-            ->setStreet('Niebuhrstraße')
-            ->setHouseNumber('48')
+            ->setStreet('Mühlenaustieg')
+            ->setHouseNumber('10')
             ->setZipCode('24118')
-            ->setCity('Kiel')
+            ->setCity('Hamburg')
             ->setCountry('Deutschland')
-            ->setPhoneNumber('0049 151 172 77 032')
+            ->setPhoneNumber('0049 700 864 833')
             ->setEmailAddress('maltehuebner@gmx.org');
 
         $actualImpress = $factory->setRemoteUrl('testurl')->getImpress();
