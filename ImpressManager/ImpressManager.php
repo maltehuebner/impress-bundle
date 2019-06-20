@@ -2,6 +2,7 @@
 
 namespace MalteHuebner\ImpressBundle\ImpressManager;
 
+use MalteHuebner\ImpressBundle\Exception\NoImpressFactoryException;
 use MalteHuebner\ImpressBundle\ImpressFactory\ImpressFactoryInterface;
 use MalteHuebner\ImpressBundle\Model\ImpressModel;
 
@@ -17,6 +18,10 @@ class ImpressManager implements ImpressManagerInterface
 
     public function getImpress(): ImpressModel
     {
+        if (!$this->factory) {
+            throw new NoImpressFactoryException();
+        }
+
         return $this->factory->getImpress();
     }
 }
