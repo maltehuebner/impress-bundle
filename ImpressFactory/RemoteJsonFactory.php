@@ -5,6 +5,9 @@ namespace MalteHuebner\ImpressBundle\ImpressFactory;
 use GuzzleHttp\Client;
 use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerInterface;
+use JMS\Serializer\SerializerBuilder;
+use MalteHuebner\ImpressBundle\DataLoader\DataLoader;
+use MalteHuebner\ImpressBundle\DataLoader\DataLoaderInterface;
 use MalteHuebner\ImpressBundle\Model\ImpressModel;
 use Symfony\Component\Cache\Adapter\AdapterInterface;
 
@@ -16,29 +19,34 @@ class RemoteJsonFactory extends AbstractCachingImpressFactory
     /** @var bool $loaded */
     protected $loaded = false;
 
-    public function setRemoteUrl(string $remoteUrl): void
+    /** @var DataLoaderInterface $dataLoader */
+    protected $dataLoader;
+
+    public function __construct(AdapterInterface $adapter, DataLoaderInterface $dataLoader)
+    {
+        $this->dataLoader = $dataLoader;
+
+        parent::__construct($adapter);
+    }
+
+    public function setRemoteUrl(string $remoteUrl): RemoteJsonFactory
     {
         $this->remoteUrl = $remoteUrl;
+
+        return $this;
     }
 
     protected function generateImpress(): ImpressModel
     {
-        $this->impressModel = $this->getSerializer()->deserialize($this->getJsonData(), ImpressModel::class, 'json');
+        $jsonData = $this->dataLoader->loadJson($this->remoteUrl);
+
+        $this->impressModel = $this->getSerializer()->deserialize($jsonData, ImpressModel::class, 'json');
 
         return $this->impressModel;
     }
 
-    protected function getJsonData(): string
-    {
-        $client = new Client();
-
-        $response = $client->get($this->remoteUrl);
-
-        return $response->getBody()->getContents();
-    }
-
     protected function getSerializer(): SerializerInterface
     {
-        return JMS\Serializer\SerializerBuilder::create()->build();
+        return SerializerBuilder::create()->build();
     }
 }

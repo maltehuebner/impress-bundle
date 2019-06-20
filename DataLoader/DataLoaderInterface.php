@@ -2,16 +2,7 @@
 
 namespace MalteHuebner\ImpressBundle\DataLoader;
 
-use GuzzleHttp\Client;
-
-class DataLoader
+interface DataLoaderInterface
 {
-    public function loadJson(string $url): string
-    {
-        $client = new Client();
-
-        $response = $client->get($this->remoteUrl);
-
-        return $response->getBody()->getContents();
-    }
+    public function loadJson(string $url): string;
 }
