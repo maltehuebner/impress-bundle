@@ -7,7 +7,7 @@ use MalteHuebner\ImpressBundle\ImpressFactory\ImpressFactoryInterface;
 use MalteHuebner\ImpressBundle\ImpressManager\ImpressManager;
 use MalteHuebner\ImpressBundle\Model\ImpressModel;
 use PHPUnit\Framework\TestCase;
-$impressModel
+
 class ImpressManagerTest extends TestCase
 {
     public function testMissingImpressFactory(): void
