@@ -3,6 +3,8 @@
 namespace MalteHuebner\ImpressBundle\Model;
 
 use JMS\Serializer\Annotation as JMS;
+use JMS\Serializer\Annotation\ExclusionPolicy;
+use JMS\Serializer\Annotation\Expose;
 
 /**
  * @JMS\ExclusionPolicy("all")
