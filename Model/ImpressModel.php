@@ -12,67 +12,58 @@ use JMS\Serializer\Annotation\Expose;
 class ImpressModel
 {
     /**
-     * @var string $firstName
      * @JMS\Expose
      * @JMS\Type("string")
      */
-    protected $firstName;
+    protected string $firstName;
 
     /**
-     * @var string $lastName
      * @JMS\Expose
      * @JMS\Type("string")
      */
-    protected $lastName;
+    protected string $lastName;
 
     /**
-     * @var string $street
      * @JMS\Expose
      * @JMS\Type("string")
      */
-    protected $street;
+    protected string $street;
 
     /**
-     * @var string $houseNumber
      * @JMS\Expose
      * @JMS\Type("string")
      */
-    protected $houseNumber;
+    protected string $houseNumber;
 
     /**
-     * @var string $zipCode
      * @JMS\Expose
      * @JMS\Type("string")
      */
-    protected $zipCode;
+    protected string $zipCode;
 
     /**
-     * @var string $city
      * @JMS\Expose
      * @JMS\Type("string")
      */
-    protected $city;
+    protected string $city;
 
     /**
-     * @var string $country
      * @JMS\Expose
      * @JMS\Type("string")
      */
-    protected $country;
+    protected string $country;
 
     /**
-     * @var string $phoneNumber
      * @JMS\Expose
      * @JMS\Type("string")
      */
-    protected $phoneNumber;
+    protected string $phoneNumber;
 
     /**
-     * @var string $emailAddress
      * @JMS\Expose
      * @JMS\Type("string")
      */
-    protected $emailAddress;
+    protected string $emailAddress;
 
     public function getFirstName(): ?string
     {

@@ -6,8 +6,7 @@ use MalteHuebner\ImpressBundle\Model\ImpressModel;
 
 abstract class AbstractImpressFactory implements ImpressFactoryInterface
 {
-    /** @var ImpressModel $impressModel */
-    protected $impressModel;
+    protected ImpressModel $impressModel;
 
     public function __construct()
     {

@@ -10,14 +10,11 @@ use Symfony\Component\Cache\Adapter\AdapterInterface;
 
 class RemoteJsonFactory extends AbstractCachingImpressFactory
 {
-    /** @var string $remoteUrl */
-    protected $remoteUrl;
+    protected string $remoteUrl;
 
-    /** @var bool $loaded */
-    protected $loaded = false;
+    protected bool $loaded = false;
 
-    /** @var DataLoaderInterface $dataLoader */
-    protected $dataLoader;
+    protected DataLoaderInterface $dataLoader;
 
     public function __construct(AdapterInterface $adapter, DataLoaderInterface $dataLoader)
     {

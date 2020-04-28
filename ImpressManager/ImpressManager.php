@@ -8,8 +8,7 @@ use MalteHuebner\ImpressBundle\Model\ImpressModel;
 
 class ImpressManager implements ImpressManagerInterface
 {
-    /** @var ImpressFactoryInterface $factory */
-    protected $factory;
+    protected ImpressFactoryInterface $factory;
 
     public function setFactory(ImpressFactoryInterface $factory): void
     {
