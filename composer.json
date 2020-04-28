@@ -3,7 +3,7 @@
     "description": "Keep your impress up to date",
     "type": "library",
     "require": {
-        "php": "^7.1",
+        "php": "^7.4",
         "jms/serializer": "^2.2",
         "guzzlehttp/guzzle": "^6.3",
         "symfony/cache": "^4.2"
