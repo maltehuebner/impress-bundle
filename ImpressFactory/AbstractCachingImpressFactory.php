@@ -11,7 +11,7 @@ abstract class AbstractCachingImpressFactory extends AbstractImpressFactory
 
     protected AdapterInterface $adapter;
 
-    protected int $ttl;
+    protected int $ttl = 3600;
 
     public function __construct(AdapterInterface $adapter)
     {
