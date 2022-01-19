@@ -15,55 +15,55 @@ class ImpressModel
      * @JMS\Expose
      * @JMS\Type("string")
      */
-    protected string $firstName;
+    protected ?string $firstName = null;
 
     /**
      * @JMS\Expose
      * @JMS\Type("string")
      */
-    protected string $lastName;
+    protected ?string $lastName = null;
 
     /**
      * @JMS\Expose
      * @JMS\Type("string")
      */
-    protected string $street;
+    protected ?string $street = null;
 
     /**
      * @JMS\Expose
      * @JMS\Type("string")
      */
-    protected string $houseNumber;
+    protected ?string $houseNumber = null;
 
     /**
      * @JMS\Expose
      * @JMS\Type("string")
      */
-    protected string $zipCode;
+    protected ?string $zipCode = null;
 
     /**
      * @JMS\Expose
      * @JMS\Type("string")
      */
-    protected string $city;
+    protected ?string $city = null;
 
     /**
      * @JMS\Expose
      * @JMS\Type("string")
      */
-    protected string $country;
+    protected ?string $country = null;
 
     /**
      * @JMS\Expose
      * @JMS\Type("string")
      */
-    protected string $phoneNumber;
+    protected ?string $phoneNumber = null;
 
     /**
      * @JMS\Expose
      * @JMS\Type("string")
      */
-    protected string $emailAddress;
+    protected ?string $emailAddress = null;
 
     public function getFirstName(): ?string
     {
