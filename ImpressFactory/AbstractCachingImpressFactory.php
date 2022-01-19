@@ -9,11 +9,9 @@ abstract class AbstractCachingImpressFactory extends AbstractImpressFactory
 {
     const CACHE_KEY = 'maltehuebner_impress_cache';
 
-    /** @var AdapterInterface $adapter */
-    protected $adapter;
+    protected AdapterInterface $adapter;
 
-    /** @var int $ttl */
-    protected $ttl;
+    protected int $ttl;
 
     public function __construct(AdapterInterface $adapter)
     {

@@ -9,8 +9,7 @@ use Twig\TwigFunction;
 
 class ImpressExtension extends AbstractExtension
 {
-    /** @var ImpressManagerInterface $impressManager */
-    protected $impressManager;
+    protected ImpressManagerInterface $impressManager;
 
     public function __construct(ImpressManagerInterface $impressManager)
     {

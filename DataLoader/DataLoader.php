@@ -7,8 +7,7 @@ use GuzzleHttp\ClientInterface;
 
 class DataLoader implements DataLoaderInterface
 {
-    /** @var ClientInterface $client */
-    protected $client;
+    protected ClientInterface $client;
 
     public function __construct(ClientInterface $client = null)
     {
