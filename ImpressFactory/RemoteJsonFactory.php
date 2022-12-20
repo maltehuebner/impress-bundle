@@ -6,7 +6,7 @@ use JMS\Serializer\SerializerInterface;
 use JMS\Serializer\SerializerBuilder;
 use MalteHuebner\ImpressBundle\DataLoader\DataLoaderInterface;
 use MalteHuebner\ImpressBundle\Model\ImpressModel;
-use Symfony\Component\Cache\Adapter\AdapterInterface;
+use Psr\Cache\CacheItemPoolInterface;
 
 class RemoteJsonFactory extends AbstractCachingImpressFactory
 {
@@ -16,7 +16,7 @@ class RemoteJsonFactory extends AbstractCachingImpressFactory
 
     protected DataLoaderInterface $dataLoader;
 
-    public function __construct(AdapterInterface $adapter, DataLoaderInterface $dataLoader)
+    public function __construct(CacheItemPoolInterface $adapter, DataLoaderInterface $dataLoader)
     {
         $this->dataLoader = $dataLoader;
 
