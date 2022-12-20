@@ -2,18 +2,18 @@
 
 namespace MalteHuebner\ImpressBundle\ImpressFactory;
 
-use Symfony\Component\Cache\Adapter\AdapterInterface;
+use Psr\Cache\CacheItemPoolInterface;
 use MalteHuebner\ImpressBundle\Model\ImpressModel;
 
 abstract class AbstractCachingImpressFactory extends AbstractImpressFactory
 {
     const CACHE_KEY = 'maltehuebner_impress_cache';
 
-    protected AdapterInterface $adapter;
+    protected CacheItemPoolInterface $adapter;
 
     protected int $ttl = 3600;
 
-    public function __construct(AdapterInterface $adapter)
+    public function __construct(CacheItemPoolInterface $adapter)
     {
         $this->adapter = $adapter;
 
