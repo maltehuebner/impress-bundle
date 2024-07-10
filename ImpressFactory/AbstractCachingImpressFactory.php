@@ -59,7 +59,8 @@ abstract class AbstractCachingImpressFactory extends AbstractImpressFactory
 
         $cacheItem
             ->set($impressModel)
-            ->expiresAfter($this->ttl);
+            ->expiresAt(new \DateTime(sprintf('@%d', time() + $this->ttl)))
+        ;
 
         $this->adapter->save($cacheItem);
     }
