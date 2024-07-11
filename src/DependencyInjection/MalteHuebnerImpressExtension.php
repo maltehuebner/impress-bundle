@@ -5,11 +5,10 @@ namespace MalteHuebner\ImpressBundle\DependencyInjection;
 use MalteHuebner\ImpressBundle\ImpressFactory\ConfigurationImpressFactory;
 use MalteHuebner\ImpressBundle\ImpressFactory\RemoteJsonFactory;
 use MalteHuebner\ImpressBundle\ImpressManager\ImpressManager;
-use MalteHuebner\ImpressBundle\ImpressManager\ImpressManagerInterface;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\DependencyInjection\Extension\Extension;
+use Symfony\Component\DependencyInjection\Loader;
 
 class MalteHuebnerImpressExtension extends Extension
 {
@@ -18,7 +17,7 @@ class MalteHuebnerImpressExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $xmlLoader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+        $xmlLoader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__ . '/../../config'));
         $xmlLoader->load('services.xml');
 
         if (!empty($config['source'])) {

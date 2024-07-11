@@ -7,6 +7,6 @@
     <services>
         <defaults autowire="true" autoconfigure="true" public="true"/>
 
-        <prototype namespace="MalteHuebner\ImpressBundle\" resource="../../*" exclude="../../{DependencyInjection,tests}"/>
+        <prototype namespace="MalteHuebner\ImpressBundle\" resource="../src/*" exclude="../src/{DependencyInjection}"/>
     </services>
 </container>
