@@ -2,7 +2,6 @@
 
 namespace MalteHuebner\ImpressBundle\ImpressManager;
 
-use MalteHuebner\ImpressBundle\Exception\NoImpressFactoryException;
 use MalteHuebner\ImpressBundle\ImpressFactory\ImpressFactoryInterface;
 use MalteHuebner\ImpressBundle\Model\ImpressModel;
 
