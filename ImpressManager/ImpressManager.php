@@ -17,10 +17,6 @@ class ImpressManager implements ImpressManagerInterface
 
     public function getImpress(): ImpressModel
     {
-        if (!$this->factory) {
-            throw new NoImpressFactoryException();
-        }
-
         return $this->factory->getImpress();
     }
 }

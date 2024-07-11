@@ -10,15 +10,6 @@ use PHPUnit\Framework\TestCase;
 
 class ImpressManagerTest extends TestCase
 {
-    public function testMissingImpressFactory(): void
-    {
-        $impressManager = new ImpressManager();
-
-        $this->expectException(NoImpressFactoryException::class);
-
-        $impressManager->getImpress();
-    }
-
     public function testImpress(): void
     {
         $expectedImpress = new ImpressModel();
