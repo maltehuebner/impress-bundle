@@ -5,6 +5,8 @@ namespace MalteHuebner\ImpressBundle\ImpressFactory;
 use MalteHuebner\ImpressBundle\DataLoader\DataLoaderInterface;
 use MalteHuebner\ImpressBundle\Model\ImpressModel;
 use Psr\Cache\CacheItemPoolInterface;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\SerializerInterface;
 
@@ -42,11 +44,11 @@ class RemoteJsonFactory extends AbstractCachingImpressFactory
     protected function getSerializer(): SerializerInterface
     {
         $normalizers = [
-            new \Symfony\Component\Serializer\Normalizer\ObjectNormalizer(),
+            new ObjectNormalizer(),
         ];
 
         $encoders = [
-            new \Symfony\Component\Serializer\Encoder\JsonEncoder(),
+            new JsonEncoder(),
         ];
 
         return new Serializer($normalizers, $encoders);
