@@ -2,8 +2,8 @@
 
 namespace MalteHuebner\ImpressBundle\ImpressFactory;
 
-use Psr\Cache\CacheItemPoolInterface;
 use MalteHuebner\ImpressBundle\Model\ImpressModel;
+use Psr\Cache\CacheItemPoolInterface;
 
 abstract class AbstractCachingImpressFactory extends AbstractImpressFactory
 {

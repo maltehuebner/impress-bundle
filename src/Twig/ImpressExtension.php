@@ -4,7 +4,6 @@ namespace MalteHuebner\ImpressBundle\Twig;
 
 use MalteHuebner\ImpressBundle\ImpressManager\ImpressManagerInterface;
 use Twig\Extension\AbstractExtension;
-use Twig\TwigFilter;
 use Twig\TwigFunction;
 
 class ImpressExtension extends AbstractExtension
