@@ -16,7 +16,7 @@ class ImpressManagerTest extends TestCase
 
         $this->expectException(NoImpressFactoryException::class);
 
-        $actualImpress = $impressManager->getImpress();
+        $impressManager->getImpress();
     }
 
     public function testImpress(): void
@@ -41,7 +41,8 @@ class ImpressManagerTest extends TestCase
         $impressFactory
             ->expects($this->once())
             ->method('getImpress')
-            ->will($this->returnValue($expectedImpress));
+            ->willReturn($expectedImpress)
+        ;
 
         $actualImpress = $impressManager->getImpress();
 

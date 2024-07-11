@@ -30,7 +30,7 @@ class ImpressExtensionTest extends TestCase
         $impressManager
             ->expects($this->exactly(9))
             ->method('getImpress')
-            ->will($this->returnValue($impressModel));
+            ->willReturn($impressModel);
 
         $impressExtension = new ImpressExtension($impressManager);
 
