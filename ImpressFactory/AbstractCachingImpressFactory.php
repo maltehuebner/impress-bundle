@@ -10,13 +10,8 @@ abstract class AbstractCachingImpressFactory extends AbstractImpressFactory
     protected const string CACHE_KEY = 'maltehuebner_impress_cache';
     protected const int CACHE_TTL = 3600;
 
-    protected CacheItemPoolInterface $adapter;
-
-
-    public function __construct(CacheItemPoolInterface $adapter)
+    public function __construct(protected readonly CacheItemPoolInterface $adapter)
     {
-        $this->adapter = $adapter;
-
         parent::__construct();
     }
 

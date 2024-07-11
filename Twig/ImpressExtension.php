@@ -9,11 +9,9 @@ use Twig\TwigFunction;
 
 class ImpressExtension extends AbstractExtension
 {
-    protected ImpressManagerInterface $impressManager;
-
-    public function __construct(ImpressManagerInterface $impressManager)
+    public function __construct(private readonly ImpressManagerInterface $impressManager)
     {
-        $this->impressManager = $impressManager;
+
     }
 
     public function getFunctions(): array
