@@ -23,6 +23,7 @@
     ],
     "autoload": {
         "psr-4": {
+            "MalteHuebner\\ImpressBundle\\Tests\\": "tests",
             "MalteHuebner\\ImpressBundle\\": ""
         }
     },
