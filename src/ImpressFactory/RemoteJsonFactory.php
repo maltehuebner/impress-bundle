@@ -14,14 +14,8 @@ class RemoteJsonFactory extends AbstractCachingImpressFactory
 {
     protected string $remoteUrl;
 
-    protected bool $loaded = false;
-
-    protected DataLoaderInterface $dataLoader;
-
-    public function __construct(CacheItemPoolInterface $adapter, DataLoaderInterface $dataLoader)
+    public function __construct(CacheItemPoolInterface $adapter, private readonly DataLoaderInterface $dataLoader)
     {
-        $this->dataLoader = $dataLoader;
-
         parent::__construct($adapter);
     }
 

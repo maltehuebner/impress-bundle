@@ -7,22 +7,12 @@ use Psr\Cache\CacheItemPoolInterface;
 
 abstract class AbstractCachingImpressFactory extends AbstractImpressFactory
 {
-    const CACHE_KEY = 'maltehuebner_impress_cache';
+    protected const string CACHE_KEY = 'maltehuebner_impress_cache';
+    protected const int CACHE_TTL = 3600;
 
-    protected CacheItemPoolInterface $adapter;
-
-    protected int $ttl = 3600;
-
-    public function __construct(CacheItemPoolInterface $adapter)
+    public function __construct(protected readonly CacheItemPoolInterface $adapter)
     {
-        $this->adapter = $adapter;
-
         parent::__construct();
-    }
-
-    public function setTtl(int $ttl): void
-    {
-        $this->ttl = $ttl;
     }
 
     final public function getImpress(): ImpressModel
@@ -59,7 +49,7 @@ abstract class AbstractCachingImpressFactory extends AbstractImpressFactory
 
         $cacheItem
             ->set($impressModel)
-            ->expiresAt(new \DateTime(sprintf('@%d', time() + $this->ttl)))
+            ->expiresAt(new \DateTime(sprintf('@%d', time() + self::CACHE_TTL)))
         ;
 
         $this->adapter->save($cacheItem);
