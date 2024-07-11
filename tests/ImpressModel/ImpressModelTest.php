@@ -2,9 +2,6 @@
 
 namespace MalteHuebner\ImpressBundle\Tests\ImpressModel;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Psr7\Response;
-use MalteHuebner\ImpressBundle\ImpressFactory\ConfigurationImpressFactory;
 use MalteHuebner\ImpressBundle\Model\ImpressModel;
 use PHPUnit\Framework\TestCase;
 

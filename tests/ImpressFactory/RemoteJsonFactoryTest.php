@@ -2,10 +2,7 @@
 
 namespace MalteHuebner\ImpressBundle\Tests\ImpressFactory;
 
-use Doctrine\Common\Annotations\AnnotationRegistry;
-use GuzzleHttp\Client;
 use MalteHuebner\ImpressBundle\DataLoader\DataLoaderInterface;
-use MalteHuebner\ImpressBundle\ImpressFactory\ConfigurationImpressFactory;
 use MalteHuebner\ImpressBundle\ImpressFactory\RemoteJsonFactory;
 use MalteHuebner\ImpressBundle\Model\ImpressModel;
 use PHPUnit\Framework\TestCase;

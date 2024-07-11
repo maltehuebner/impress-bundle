@@ -2,9 +2,6 @@
 
 namespace MalteHuebner\ImpressBundle\Tests\Twig;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Psr7\Response;
-use MalteHuebner\ImpressBundle\ImpressFactory\ConfigurationImpressFactory;
 use MalteHuebner\ImpressBundle\ImpressManager\ImpressManagerInterface;
 use MalteHuebner\ImpressBundle\Model\ImpressModel;
 use MalteHuebner\ImpressBundle\Twig\ImpressExtension;
