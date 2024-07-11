@@ -2,67 +2,16 @@
 
 namespace MalteHuebner\ImpressBundle\Model;
 
-use JMS\Serializer\Annotation as JMS;
-use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\Expose;
-
-/**
- * @JMS\ExclusionPolicy("all")
- */
 class ImpressModel
 {
-    /**
-     * @JMS\Expose
-     * @JMS\Type("string")
-     */
     protected ?string $firstName = null;
-
-    /**
-     * @JMS\Expose
-     * @JMS\Type("string")
-     */
     protected ?string $lastName = null;
-
-    /**
-     * @JMS\Expose
-     * @JMS\Type("string")
-     */
     protected ?string $street = null;
-
-    /**
-     * @JMS\Expose
-     * @JMS\Type("string")
-     */
     protected ?string $houseNumber = null;
-
-    /**
-     * @JMS\Expose
-     * @JMS\Type("string")
-     */
     protected ?string $zipCode = null;
-
-    /**
-     * @JMS\Expose
-     * @JMS\Type("string")
-     */
     protected ?string $city = null;
-
-    /**
-     * @JMS\Expose
-     * @JMS\Type("string")
-     */
     protected ?string $country = null;
-
-    /**
-     * @JMS\Expose
-     * @JMS\Type("string")
-     */
     protected ?string $phoneNumber = null;
-
-    /**
-     * @JMS\Expose
-     * @JMS\Type("string")
-     */
     protected ?string $emailAddress = null;
 
     public function getFirstName(): ?string
