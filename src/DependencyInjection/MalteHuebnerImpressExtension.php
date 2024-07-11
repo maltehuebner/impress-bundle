@@ -17,7 +17,7 @@ class MalteHuebnerImpressExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $xmlLoader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+        $xmlLoader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__ . '/../../config'));
         $xmlLoader->load('services.xml');
 
         if (!empty($config['source'])) {
