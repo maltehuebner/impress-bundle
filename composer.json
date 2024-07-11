@@ -23,10 +23,11 @@
     ],
     "autoload": {
         "psr-4": {
+            "MalteHuebner\\ImpressBundle\\Tests\\": "tests",
             "MalteHuebner\\ImpressBundle\\": ""
         }
     },
     "scripts": {
-        "test": "vendor/phpunit/phpunit/phpunit test"
+        "test": "vendor/phpunit/phpunit/phpunit tests"
     }
 }

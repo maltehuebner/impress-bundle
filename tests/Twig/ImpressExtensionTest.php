@@ -2,9 +2,6 @@
 
 namespace MalteHuebner\ImpressBundle\Tests\Twig;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Psr7\Response;
-use MalteHuebner\ImpressBundle\ImpressFactory\ConfigurationImpressFactory;
 use MalteHuebner\ImpressBundle\ImpressManager\ImpressManagerInterface;
 use MalteHuebner\ImpressBundle\Model\ImpressModel;
 use MalteHuebner\ImpressBundle\Twig\ImpressExtension;
@@ -30,7 +27,7 @@ class ImpressExtensionTest extends TestCase
         $impressManager
             ->expects($this->exactly(9))
             ->method('getImpress')
-            ->will($this->returnValue($impressModel));
+            ->willReturn($impressModel);
 
         $impressExtension = new ImpressExtension($impressManager);
 

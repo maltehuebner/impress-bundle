@@ -2,12 +2,8 @@
 
 namespace MalteHuebner\ImpressBundle\Tests\Serializer;
 
-use MalteHuebner\ImpressBundle\DataLoader\DataLoaderInterface;
-use MalteHuebner\ImpressBundle\ImpressFactory\RemoteJsonFactory;
 use MalteHuebner\ImpressBundle\Model\ImpressModel;
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\Cache\Adapter\AdapterInterface;
-use Symfony\Component\Cache\CacheItem;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;

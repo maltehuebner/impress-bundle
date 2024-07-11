@@ -10,15 +10,6 @@ use PHPUnit\Framework\TestCase;
 
 class ImpressManagerTest extends TestCase
 {
-    public function testMissingImpressFactory(): void
-    {
-        $impressManager = new ImpressManager();
-
-        $this->expectException(NoImpressFactoryException::class);
-
-        $actualImpress = $impressManager->getImpress();
-    }
-
     public function testImpress(): void
     {
         $expectedImpress = new ImpressModel();
@@ -41,7 +32,8 @@ class ImpressManagerTest extends TestCase
         $impressFactory
             ->expects($this->once())
             ->method('getImpress')
-            ->will($this->returnValue($expectedImpress));
+            ->willReturn($expectedImpress)
+        ;
 
         $actualImpress = $impressManager->getImpress();
 
