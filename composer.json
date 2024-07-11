@@ -28,6 +28,6 @@
         }
     },
     "scripts": {
-        "test": "vendor/phpunit/phpunit/phpunit test"
+        "test": "vendor/phpunit/phpunit/phpunit tests"
     }
 }
